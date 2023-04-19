@@ -1,0 +1,39 @@
+{
+  "name": "miles-react",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.11.2",
+    "@mui/x-data-grid": "^5.17.17",
+    "@next/font": "13.1.1",
+    "@nextui-org/react": "^1.0.0-beta.12",
+    "axios": "^1.2.2",
+    "bcrypt": "^5.1.0",
+    "components": "^0.1.0",
+    "eslint-config-next": "13.1.1",
+    "json-loader": "^0.5.7",
+    "jsonwebtoken": "^9.0.0",
+    "next": "13.1.1",
+    "pages": "^0.0.16",
+    "react": "18.2.0",
+    "react-router": "^6.9.0",
+    "react-router-dom": "^6.9.0"
+  },
+  "devDependencies": {
+    "jest": "^29.4.1"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  }
+}
