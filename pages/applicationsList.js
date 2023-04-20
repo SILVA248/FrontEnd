@@ -1,9 +1,7 @@
-import { IconButton, Typography, Box, Button } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import { AppSection, AppHeader } from "components/common";
 import React, { useState, useEffect } from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
 import { Api } from "../utils/api.js";
 
 export default function ApplicationsList() {
@@ -11,7 +9,6 @@ export default function ApplicationsList() {
   const [perPage, setPerPage] = useState(5);
   const [page, setPage] = useState(0);
   const [rowCount, setRowCount] = useState();
-  const [data, setData] = useState();
   const [applications, setApplications] = useState({ rows: [] });
   const columns = [
     {
@@ -25,22 +22,6 @@ export default function ApplicationsList() {
     { field: "phone", headerName: "Phone", width: 150 },
     { field: "linkedinURL", headerName: "Linkedin", width: 150 },
     { field: "salaryExp", headerName: "SalaryExp", width: 150 },
-    {
-      field: "Actions",
-      headerNameName: "Actions",
-      width: 200,
-      renderCell: (params) => (
-        <>
-          <IconButton>
-            <EditIcon fontSize="small" variant="outlined" />
-          </IconButton>
-
-          <IconButton>
-            <DeleteIcon fontSize="small" color="secondary" />
-          </IconButton>
-        </>
-      ),
-    },
   ];
 
   function fetchApplications() {
@@ -77,7 +58,7 @@ export default function ApplicationsList() {
         <Typography variant="h4">Applications List</Typography>
       </AppHeader>
       <Box sx={{ position: "absolute", top: 0, right: 0, p: 2 }}></Box>
-      <Box sx={{ height: 400, width: "100%" }}>
+      <Box sx={{ height: 400, width: 850, margin: "auto" }}>
         <DataGrid
           auto-height
           rowSelection="false"

@@ -6,6 +6,7 @@ export const theme = createTheme({
     h4: {
       fontWeight: 700,
       fontFamily: ["Work Sans"],
+      margin: "auto",
     },
   },
   components: {

@@ -1,7 +1,6 @@
 import {
   Dialog,
   DialogTitle,
-  DialogContentText,
   DialogActions,
   DialogContent,
   TextField,
@@ -15,7 +14,6 @@ import EditIcon from "@mui/icons-material/Edit";
 import { AppSection, AppHeader } from "components/common.js";
 import { DataGrid } from "@mui/x-data-grid";
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ComputerIcon from "@mui/icons-material/Computer";
 import { Api } from "../utils/api.js";
@@ -103,9 +101,11 @@ export default function JobsList() {
   //Save the row you want to delete
   function handleDelete(rowDelete) {
     setIsDeleting(true);
-    Api.delete(`jobs/${rowDelete}`, {headers: {
-      'Authorization': `Bearer ${localStorage.getItem('token')}`
-    }})
+    Api.delete(`jobs/${rowDelete}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
       .then((response) => {
         console.log(response);
         setData({ company_name: "", job_position: "", description: "" });
@@ -146,9 +146,11 @@ export default function JobsList() {
   //Close the Dialog and confirm data to update(this const is called when you click on subscrive)
   const handleUpdate = () => {
     setIsUpdating(true);
-    Api.put(`jobs/${data.job_id}`, data , {headers: {
-      'Authorization': `Bearer ${localStorage.getItem('token')}`
-    }})
+    Api.put(`jobs/${data.job_id}`, data, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
       .then((response) => {
         console.log(response);
         fetchJobs();
