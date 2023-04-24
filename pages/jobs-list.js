@@ -246,7 +246,7 @@ export default function JobsList() {
             disabled={isUpdating}
             endIcon={isUpdating ? <HourglassBottomIcon /> : null}
           >
-            Subscribe
+            Update
           </Button>
         </DialogActions>
       </Dialog>
